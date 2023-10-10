@@ -1,0 +1,176 @@
+import React from 'react';
+import styled from 'styled-components';
+import Orders from './components/Orders';
+import Cakes from './components/Cakes';
+import Users from './components/Users';
+import Delivery from './components/Delivery';
+
+const AdminPanel = () => {
+  return (
+    <Wrapper>
+         <div className="admin-panel">
+      <div id="myGroup">
+        <div className="buttons">
+      <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Orders
+  </button>
+  <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    Cakes
+  </button>
+  <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample2">
+    Users
+  </button>
+  <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample2">
+    Delivery
+  </button>
+  </div>
+
+<div className="collapse" id="collapseExample" data-bs-parent="#myGroup">
+      <Orders/>
+</div>
+<div className="collapse" id="collapseExample2" data-bs-parent="#myGroup">
+   <Cakes/>
+   </div>
+   <div className="collapse" id="collapseExample3" data-bs-parent="#myGroup">
+   <Users/>
+   </div>
+   <div className="collapse" id="collapseExample4" data-bs-parent="#myGroup">
+   <Delivery/>
+   </div>
+  </div>
+      </div>
+
+      <div className="header">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <p>This is a dashboard for managing orders, cakes, and users.</p>
+      </div>
+      <div className="dashboard">
+        <div className="main-content">
+          <div className="box">
+            <h2>Orders</h2>
+            <p>123</p>
+          </div>
+          <div className="box">
+            <h2>Cakes</h2>
+            <p>45</p>
+          </div>
+          <div className="box">
+            <h2>Users</h2>
+            <p>678</p>
+          </div>
+        </div>
+        <div className="large-box">
+          <div className="box1">
+            <img src="/images/admin.jpg" alt="" />
+          </div>
+          <div className="box2">
+            <p>
+              Welcome to the Cake Shop Admin Dashboard, your central hub for
+              managing all aspects of your delightful cake business. From
+              overseeing orders and keeping your cake catalog up-to-date to
+              managing customer relationships and tracking inventory, our
+              intuitive and user-friendly dashboard puts you in control. We
+              understand the importance of delivering sweet moments to your
+              customers, and this dashboard is designed to help you do just
+              that. Stay organized, track your success, and continue to offer
+              the finest cakes and desserts to your valued clientele. Your
+              passion for baking meets the power of technology, all in one place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  );
+};
+
+export default AdminPanel;
+
+const Wrapper = styled.section`
+  h1 {
+    font-size: 2.5rem;
+  }
+  img{
+    width:80%;
+    height:auto;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 80vw;
+    margin: auto;
+  }
+
+  .header {
+    background-color: #6dabe4;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .box {
+    background-color: lightgrey;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 10px;
+  }
+
+  .box1 {
+    width: 40%;
+  }
+
+  .box2 {
+    width: 60%;
+  }
+
+  .large-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    color: #333;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px grey;
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+
+    .box {
+      margin: 10px 0;
+      width: 80%;
+    }
+
+    .box2 {
+      width: 100%;
+    }
+  }
+`;

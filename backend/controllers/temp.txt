@@ -1,0 +1,26 @@
+ emailBody = `
+  <html>
+    <body>
+      <h2>Order Confirmation</h2>
+      <p>Dear ${user.name},</p>
+      <p>Your orders have been confirmed. Please find the order details below:</p>
+      ${order.map((item, index) =>`
+      ${total+=item.price}
+       ${!item.customize?`
+
+        <h3>Order ${count++}</h3>
+        <ul>
+          <li>Cake: ${item.name}</li>
+          <li>Flavour: ${item.flavour}</li>
+          <li>Weight: ${item.wt}</li>
+          <li>Quantity: ${item.amount}</li><br/>
+        </ul>
+        `:"after Price are Decided by our agency for your customization cake,you got email for order conformation."}
+      `).join('')}
+      <p>Total Price : <b>${total}</b></p>
+      <p>Above cakes are confirmed, but if you order customized cakes,then you got a mail after conformation of Golden cakeshop.</p>
+      <p>Thank you for your orders!</p> <br/>
+      <p>If you have any queries, please feel free to contact us: <b>7990554541</b></p>
+    </body>
+  </html>
+`;
